@@ -1,0 +1,13 @@
+groups:
+  - name: system_uptime
+    rules:
+      - alert: system_uptime_alert
+        expr: system_uptime_rule < 300 #5 minut #detect recent system reboots
+        for: 1m
+        labels:
+          node1: system_uptime
+        annotations:
+          summary: "system uptime in {{ $labels.instance }}"
+          description: "system uptime is {{ $value }}"
+
+                                       

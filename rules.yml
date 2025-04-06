@@ -1,0 +1,11 @@
+
+groups:
+  - name: system_uptime
+    rules:
+      - record: system_uptime_rule
+        expr: node_time_seconds - node_boot_time_seconds
+        labels:
+          node1: system_uptime
+  #node_time_seconds: This represents the current Unix timestamp in seconds .
+  #node_boot_time_seconds: This represents the Unix timestamp in seconds when the system last booted up. 
+
